@@ -1,0 +1,39 @@
+
+class CommandSource
+{​​​​   
+    ICommand _command;
+
+    public void setCommand(ICommand command)
+    {​​​​
+	    this._command=command;    
+    }​​​​     
+    
+	public void Trigger()
+    {​​​​
+        this._command.Execute();
+    }​​​​
+}​​​​ 
+
+interface ICommand
+{​​​​
+    public void Execute();
+
+}​​​​ 
+class SaveCommand:ICommand
+{​​​​ 
+    CommandTarget _target; 
+    
+	public void Execute()
+	{​​​​
+        _target.Method();
+    }	​​​​ 
+}​​​​ 
+
+class CommandTarget
+{​​​ 
+​     public void Method()
+     {​​​​
+	 
+     }​​   ​​ 
+}​​​​
+
